@@ -1,0 +1,610 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(144, 73, 173, 0.5), rgba(144, 73, 173, 0.536)),
+                url('images/background.jpg'); /* Adjust the file extension and path */
+    background-position: center;
+    background-size: cover;
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+.links{
+    flex:1;
+    text-align: right;
+}
+.links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.links ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+.links ul li ::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background-color: rgb(193, 0, 0);
+    display:block;
+    margin:auto;
+    transition: 0.5s;
+}
+.links ul li :hover::after{
+    width: 100%;
+}
+.text-box{
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 100px;
+    margin: 50px 0 3px;
+    color:rgb(251, 216, 216);
+}    
+.text-box p{
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.854);
+    margin: 20px;
+}
+.button{
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(133, 4, 4);
+    border: 3px solid rgba(152, 18, 18, 0.757);
+    padding: 12px 34px;
+    font-size: 20px;
+    background: rgba(214, 163, 163, 0.2);
+    position: relative;
+    cursor: pointer;
+    border-radius: 7%;
+    box-sizing: border-box;
+}
+.button:hover{
+    border: 3px solid white;
+    color: white;
+    background: rgb(241, 0, 0,0.7);
+    box-shadow: 0 0 20px 10px rgba(0,0,0,0.2);
+    transition: 0.5s;
+}
+.quiz{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 100px;
+}
+.quiz h1{
+    font-size: 50px;
+    font-weight: 500;
+}
+.quiz p{
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.col{
+    flex-basis: 100%;
+    background-color: rgba(217, 159, 185, 0.583);
+    border-radius: 10%;
+    margin-bottom: 2%;
+    margin-left: 3%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+.col h3{
+    text-align: center;
+    font-size: 200%;
+    padding: 20px;
+}
+.col h3:hover{
+    text-decoration: none;
+}
+.col:hover{
+    background-color: rgb(213, 164, 164);
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.8);
+    transition: 0.5s;
+}
+.subjects{
+    text-align: center;
+    color: black;
+    width: 80%;
+    margin:auto;
+    padding-top: 50px; 
+}
+.subjects h1{
+    font-size: 50px;
+    font-weight: 600 ;
+}
+.photo-col{
+    flex-basis: 32%;
+    border-radius: 20px;
+    display: flex;
+    margin-bottom: 30px;
+    position: relative;
+    overflow:auto;
+    
+    
+}
+.photo-col img{
+    width: 350px;
+    height: 400px
+}
+.layer{
+    background: transparent;
+    
+    color: black;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left:0;
+    text-align: center;
+    border: 20;
+    transition: 0.5s;
+    
+
+}
+.layer:hover{
+    background: rgba(236, 36, 36, 0.667);
+}  
+.layer h3{
+    width: 100%;
+    color: rgb(255, 255, 255);
+    font-size: 26px;
+    bottom: 0;
+    position: absolute;
+    transition: 0.5s;
+}
+.layer:hover h3{
+    bottom: 49%;
+    opacity: 1;
+
+}
+.quizzes{
+    height:50vh;
+    width: 100%;
+    /* background-image: url(images/about\ us.jpg); */
+    background: linear-gradient(rgba(144, 73, 173, 0.5), rgba(144, 73, 173, 0.536)),
+                url('images/about\ us.jpg');
+    /* background-image:linear-gradient(rgba(144, 73, 173, 0.5), (rgba(144, 73, 173, 0.5)),url(images/team.png); */
+    background-position: center;
+    background-size: cover;
+    color: white;
+
+}
+.sub{
+    height:50vh;
+    width: 100%;
+    background: linear-gradient(rgba(144, 73, 173, 0.5), rgba(144, 73, 173, 0.536)),
+                url('images/front\ clipart.jpg');
+    /* background-image:linear-gradient(rgba(144, 73, 173, 0.5), (rgba(144, 73, 173, 0.5)),url(images/team.png); */
+    background-position: center;
+    background-size: cover;
+    color: white;
+
+}
+.about{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 100px;
+}
+.about h1{
+    font-size: 50px;
+    font-weight: 500;
+}
+.about p{
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.row2{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.col2{
+    flex-basis: 60%;
+    background-color: rgba(217, 159, 185, 0.583);
+    border-radius: 10%;
+    margin-bottom: 2%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    margin-left:3%;
+    margin-right: 3%;
+    text-align: center;
+    
+}
+.col2 h3{
+    text-align: center;
+    font-size: 200%;
+    padding: 20px;
+    
+}
+
+.photo-col2{
+    flex-basis: 38%;
+    border-radius: 0px;
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+    overflow:auto;
+    
+    
+}
+.photo-col2 img{
+    width: 100%;
+}
+.aboutus{
+    height:50vh;
+    width: 100%;
+    /* background-image: url(images/team.png); */
+    background: linear-gradient(rgba(144, 73, 173, 0.5), rgba(144, 73, 173, 0.536)),
+                url('images/team.png');
+    /* background-image:linear-gradient(rgba(144, 73, 173, 0.5), (rgba(144, 73, 173, 0.5)),url(images/team.png); */
+    background-position: center;
+    background-size: cover;
+    color: white;
+
+}
+
+.form-box-login{
+    color: rgba(154, 58, 58, 0.808);
+    text-align: center;
+    background-color: rgba(152, 126, 176, 0.355);
+    align-items: center;
+}
+.log{
+    align-items: center;
+}
+.wrapper{
+    position:relative;
+    width: 400px;
+    height: 440px;
+    background: rgba(183, 104, 111, 0.429);
+    border: 2px solid rgba(236, 36, 36, 0.667);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-left: 36%;
+    margin-bottom: 5%;
+}
+
+.wrapper.form-box{
+    width: 100%;
+    padding: 40px;
+}
+.form-box h2{
+    font-size: 2em;
+    color: black;
+    text-align: center;
+}
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.667);
+    margin: 30px 0;
+
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: black;
+    font-weight: 600;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top:-5px
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: black;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+.remember-forgot{
+    font-size: .9em;
+    color: black;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+} 
+.remember-forgot label input{
+    accent-color: black;
+    margin-right: 3px;
+}
+.remember-forgot a{
+    color: rgb(0, 0, 0);
+    
+    text-decoration:none;
+}
+.remember-forgot a:hover{
+    text-decoration: underline;
+
+
+}
+.login-register{
+    font-size: .9em;
+    color: black;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+
+}
+.login-register p a{
+    color: black;
+    text-decoration: none;
+    font-weight: 600;  
+}
+.login-register p a:hover{
+    text-decoration: underline;
+}
+.log-head{
+    height:50vh;
+    width: 100%;
+    /* background-image: url(images/about\ us.jpg); */
+    background: linear-gradient(rgba(144, 73, 173, 0.5), rgba(144, 73, 173, 0.536)),
+                url('images/about\ us.jpg');
+    /* background-image:linear-gradient(rgba(144, 73, 173, 0.5), (rgba(144, 73, 173, 0.5)),url(images/team.png); */
+    background-position: center;
+    background-size: cover;
+    color: white;
+    align-items: center;
+
+}
+.log{
+    justify-content: centers;
+}
+.math-head{
+    height:50vh;
+    width: 100%;
+    /* background-image: url(images/math.jpeg); */
+    background: linear-gradient(rgba(144, 73, 173, 0.5), rgba(144, 73, 173, 0.536)),
+                url('images/math.jpeg');
+    /* background-image:linear-gradient(rgba(144, 73, 173, 0.5), (rgba(144, 73, 173, 0.5)),url(images/team.png); */
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+    
+
+}
+.mathematics{
+    padding-top: 20%;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 100px;
+}
+.mathematics h1{
+    font-size: 50px;
+    font-weight: 500;
+}
+.mathematics p{
+    color: black;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.sci-head{
+    height:50vh;
+    width: 100%;
+    /* background-image: url(images/science\ pic.jpeg); */
+    background: linear-gradient(rgba(144, 73, 173, 0.5), rgba(144, 73, 173, 0.536)),
+                url('images/science\ pic.jpeg');
+    /* background-image:linear-gradient(rgba(144, 73, 173, 0.5), (rgba(144, 73, 173, 0.5)),url(images/team.png); */
+    background-position: center;
+    background-size: cover;
+    align-items: center;    
+
+}
+.lang-head{
+    height:50vh;
+    width: 100%;
+    /* background-image: url(images/eng.jpeg); */
+    background: linear-gradient(rgba(144, 73, 173, 0.5), rgba(144, 73, 173, 0.536)),
+                url('images/eng.jpeg');
+    /* background-image:linear-gradient(rgba(144, 73, 173, 0.5), (rgba(144, 73, 173, 0.5)),url(images/team.png); */
+    background-position: center;
+    background-size: cover;
+    align-items: center;    
+
+}
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #dc7288cc;
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+.row a{
+    color: white;
+    text-decoration: none;
+}
+.row a:hover{
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+    transition: 0.5s;
+}
+.syllabus h1{
+    font-size: 50px;
+}
+.syllabus table tbody tr td a{
+    text-decoration: none; /* Add underline to links in cells */
+    color: #1b1b1b;
+}
+.syllabus table tbody tr td a:hover{
+    text-decoration: none; /* Add underline to links in cells */
+    color: #791111cc;
+}
+.learn{
+    text-align: center;
+}
+.learn h1 {
+    font-size: 70px;
+    text-align: center;
+}
+.learn{
+    font-size: 30px;
+}
+.vid video{
+    width: 35em;
+}
+.para{
+    background-color: rgba(89, 197, 161, 0.64);
+}
+.container {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  /* padding: 20px; */
+  background-color: #f2a7d8aa;
+}
+
+.footer {
+  background-color: #e91818ce;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.contact-us {
+  text-align: center;
+  
+}
+
+.contact-us h3 {
+  margin-bottom: 10px;
+}
+
+.contact-us p {
+  margin: 5px 0;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-bottom p {
+  font-size: 9px;
+  color: rgb(210, 26, 26);
+  
+}
+/* QUIZ FROM HERE */
+.quiz-question {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    align-items: center;
+    text-align: center;
+}
+
+
+.quiz-options {
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+
+    margin-top: 20px;
+}
+
+.option {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px 0;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    margin-left: 48%;
+}
+
+.option:hover {
+    background-color: #ecf0f1;
+}
+
+.progress {
+    margin-top: 20px;
+    margin-left: 45%;
+}
+.questionSection button{
+    margin-left: 45%;
+}
+.contactus{
+    height:50vh;
+    width: 100%;
+    /* background-image: url(images/eng.jpeg); */
+    background: linear-gradient(rgba(144, 73, 173, 0.5), rgba(144, 73, 173, 0.536)),
+                url('images/contact.jpg');
+    /* background-image:linear-gradient(rgba(144, 73, 173, 0.5), (rgba(144, 73, 173, 0.5)),url(images/team.png); */
+    background-position: center;
+    background-size: cover;
+    align-items: center; 
+}
+.contact-tab{
+    margin-top: 3%;
+    text-align: center;
+    align-items: center;
+}
+

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon web page</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- this is header  -->
+    <section class="math-head">
+        <nav>
+            <a href="hackathon.html"><img src="images/logo.png" width="110"></a>
+            <div class="links">
+                <ul>
+                    <li><a href="hackathon.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="quizzes.html">QUIZZES</a></li>
+                    <li><a href="subjects.html">SUBJECTS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <a href="login.html"><button class="button">LOGIN</button></a>
+                    
+                </ul>
+            </div>
+        </nav>
+    </section>
+    <section class="learn">
+        <h1>ALL THE BEST!</h1>
+        <p>First Grade Quiz</p>
+    </section>
+    <section id="questionSection">
+        <div class="quiz-question" id="questionText">What number comes after 1?</div>
+
+        <div class="quiz-options">
+            <div class="option" onclick="selectOption('2 TWO')">2 "TWO"</div>
+            <div class="option" onclick="selectOption('4 FOUR')">4 "FOUR"</div>
+            <div class="option" onclick="selectOption('9 NINE')">9 "NINE"</div>
+        </div>
+
+        <div class="progress" id="progress">Question 1 of 3</div>
+
+        <button class= "button" onclick="nextQuestion()">Next</button>
+        <a href="quizzes.html"><button class="button">EXIT</button></a>
+    </section>
+    <script>
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        const questions = [
+            { text: 'What number comes after 1?', options: ['2', '4', '9'], correct: '2' },
+            { text: 'What is 1 + 3?', options: ['8', '13', '4'], correct: '4' },
+            { text: 'What is the shape of the letter o?', options: ['Triangle', 'Circle', 'Square'], correct: 'Circle'}
+        ];
+
+        function showQuestion(index) {
+            const questionTextElement = document.getElementById('questionText');
+            const optionsContainer = document.querySelector('.quiz-options');
+            const progressElement = document.getElementById('progress');
+
+            questionTextElement.textContent = questions[index].text;
+
+            // Clear existing options
+            optionsContainer.innerHTML = '';
+
+            // Add new options
+            questions[index].options.forEach(option => {
+                const optionElement = document.createElement('div');
+                optionElement.classList.add('option');
+                optionElement.textContent = option;
+                optionElement.onclick = () => selectOption(option);
+                optionsContainer.appendChild(optionElement);
+            });
+
+            // Update progress
+            progressElement.textContent = `Question ${index + 1} of ${questions.length}`;
+        }
+
+        function selectOption(option) {
+            const currentQuestion = questions[currentQuestionIndex];
+            if (option === currentQuestion.correct) {
+                score++;
+            }
+
+            // Move to the next question
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion(currentQuestionIndex);
+            } else {
+                // Quiz completed, show results
+                alert(`Thanks for taking the quiz!\nYour score: ${score} out of ${questions.length}`);
+            }
+        }
+        function nextQuestion() {
+        // Move to the next question
+        currentQuestionIndex++;
+
+        if (currentQuestionIndex < questions.length) {
+            showQuestion(currentQuestionIndex);
+        } else {
+            // Quiz completed, show results
+            alert(`Thanks for taking the quiz!\nYour score: ${score} out of ${questions.length}`);
+        }
+    }
+        // Initial question
+        showQuestion(currentQuestionIndex);
+    </script>
+</body>
+</html>

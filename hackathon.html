@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon web page</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!-- this is header  -->
+    <section class="header">
+        <nav>
+            <a href="hackathon.html"><img src="images/logo.png" width="110"></a>
+            <div class="links">
+                <ul>
+                    <li><a href="hackathon.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="quizzes.html">QUIZZES</a></li>
+                    <li><a href="subjects.html">SUBJECTS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <a href="login.html"><button class="button">LOGIN</button></a>
+                    
+                </ul>
+            </div>
+        </nav>
+        <!-- this is text box -->
+        <div class="text-box">
+            <h1> Your Study Space</h1>
+            <p>Study.Spark.Succeed</p>
+            <a href="subjects.html" class="button">START NOW</a>
+        </div>
+    </section>
+    <!-- this is team -->
+    <section class="quiz" >
+        <h1>QUIZ TIME</h1>
+        <p>Challenge Yourself Now!</p>
+        <!-- this is row -->
+        <div class="row">
+            <div class="col">
+                <h3>MATH</h3>
+                <p>Embark on a mathematical adventure,where numbers dance and equations play hide-and-seek!</p>
+            </div>
+            <!-- this is col -->
+            <div class="col">
+                <h3>SCIENCE</h3>
+                <p>This is a ticket to a journey filled with fascinating facts,mind bending questions,and excitement!</p>
+            </div>
+            <!-- this is col -->
+            <div class="col">
+                <h3>LANGUAGE</h3>
+                <p>Have fun with words! Join the language quiz and enjoy expanding your vocabulary.</p>
+            </div>
+
+        </div>
+    </section>
+    <!-- this is college -->
+    <section class="subjects">
+        <h1>SUBJECTS</h1>
+        <p>Pick your topic!</p>
+        <!-- this is row -->
+        <div class="row">
+            <a href="math.html">
+            <div class="photo-col">
+                <img src="images/math.jpg">
+                <div class="layer">
+                    <h3>MATHEMATICS</h3>
+                </div>
+            </div>
+            </a>
+            <!-- this is photo col -->
+            <a href="science.html">
+            <div class="photo-col">
+                <img src="images/science pic.jpeg">
+                <div class="layer">
+                    <h3>SCIENCE</h3>
+                </div>
+                
+            </div>
+            </a>
+            <!-- this is photo col -->
+            <a href="language.html">
+            <div class="photo-col">
+                <img src="images/english pic.jpeg">
+                <!-- this is layer -->
+                <div class="layer">
+                    <h3>LANGUAGE</h3>
+                </div>
+            </div>
+            </a>
+        </div>    
+    </section>
+    <section class="about" >
+        <h1>About Us</h1>
+        <p>How and why we created this website</p>
+        <!-- this is row -->
+        <div class="row2">
+            <div class="col2">
+                <h3>Your Study Space</h3><br><br>
+                <p>Welcome to our website, where learning knows no limits! We began this journey with a simple idea: to bring education to underserved communities.</p>
+                <p>Featuring offline learning activities and convenient download options, we're here to make education accessible to all, regardless of online constraints.</p>
+                <p>We believe in the power of knowledge, no matter where you are. Join us on this educational adventure, where every click opens a door to a brighter future!
+                </p>
+            </div>
+            <div class="photo-col2">
+                <img src="images/sqlogo.jpeg" alt="Not found">
+                <div class="layer">
+                    <h3>STUDY-SPARK-SUCCEED</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <h4></h4>
+    </section>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then((registration) => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch((error) => {
+                    console.error('Service Worker registration failed:', error);
+                });
+        }
+    </script>
+    
+    <section class="Footer">
+            <div class="container">
+              <div class="contact-us">
+                <h3>Contact Us</h3>
+                <p>GNITS,HYDERABAD</p>
+                <p>Email: yourstudyspace@gmail.com</p>
+                <p>Phone: +91 9014553728</p>
+              </div>
+              <div class="footer-bottom">
+                <p>&copy; 2023 YourStudySpace. All Rights Reserved.</p>
+              </div>
+            </div>
+    </section>
+</body>
+</html>
